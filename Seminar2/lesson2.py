@@ -67,29 +67,29 @@
 Пример:
 Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
 """
-# from random import randint
-#
-# def get_dict(n):
-#     my_dict = {}
-#     for i in range(1, n+1):
-#         my_dict[i] = 3 * i + 1
-#     return my_dict
-#
-# n = randint(1, 25)
-#
-# print(n)
-# print(get_dict(n))
+from random import randint
+
+def get_dict(n):
+    my_dict = {}
+    for i in range(1, n+1):
+        my_dict[i] = 3 * i + 1
+    return my_dict
+
+n = randint(1, 25)
+
+print(n)
+print(get_dict(n))
 
 
-# from random import randint
-#
-# def get_dict(n):
-#     return {i: 3 * i + 1 for i in range(1, n+1)}
-#
-# n = randint(5, 20)
-#
-# print(n)
-# print(get_dict(n))
+from random import randint
+
+def get_dict(n):
+    return {i: 3 * i + 1 for i in range(1, n+1)}
+
+n = randint(5, 20)
+
+print(n)
+print(get_dict(n))
 
 
 '''
