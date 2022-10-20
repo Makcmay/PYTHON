@@ -1,24 +1,25 @@
 '''
 27. Задайте строку из набора чисел. Запишите ее в файл. Напишите программу, которая считает строку из файла и покажет большее и меньшее число. В качестве символа-разделителя используйте пробел.
 '''
-# string = '12 -5 34 71 -74 39 0'
-# with open('task_27.txt', 'w') as f:
-#     f.write(string)
-#
-# with open('task_27.txt') as file:
-#     my_str = file.read()
-#
-#
-# def find_max_min(str_1):
-#     my_list = [int(x) for x in str_1.split()]
-#     return min(my_list), max(my_list)
-#
-#
-# new_str = '12374 12 65 '
-# a, b = find_max_min(my_str)
-#
-# print(a, b)
-# print(f'Минимальный элемент {a}')
+string = '12 -5 34 71 -74 39 0'
+with open('task_27.txt', 'w') as f:
+    f.write(string)
+
+with open('task_27.txt') as file:
+    my_str = file.read()
+    print(my_str)
+
+
+def find_max_min(str_1):
+    my_list = [int(x) for x in str_1.split()]  # проходим по списку и оборачиваемв инт все значения и доьъбавляем в лист
+    return min(my_list), max(my_list) # возвращаем искомые
+
+
+new_str = '12374 12 65 '
+a, b = find_max_min(my_str)  # присваиваем переменные
+
+print(a, b)
+print(f'Минимальный элемент {a}')
 
 '''
 28. Найдите корни квадратного уравнения Ax² + Bx + C = 0 двумя способами:
@@ -28,54 +29,53 @@
 
 '''
 
-# from math import sqrt
-# from utils import discr
-#
-#
-# def coren(a, b, c):
-#     if discr(a, b, c) < 0:
-#         print('Корней нет')
-#     elif discr(a, b, c) == 0:
-#         return -b / 2 * a
-#     else:
-#         return [(-b - sqrt(discr(a, b, c))) / 2 * a, (-b + sqrt(discr(a, b, c))) / 2 * a]
-#
-#
-# print(coren(-4, 2, 1))
-
-# import math
+from math import sqrt
+from utils import discr
 
 
-# def find_roots(a, b, c):
-#     D = b ^ 2 - 4 * a * c
-#     roots = []
-#     if D < 0:
-#         roots.append('Нет корней')
-#         return roots
-#     x1 = (-b + math.sqrt(D)) / (2 * a)
-#     roots.append(x1)
-#     if D > 0:
-#         x2 = (-b - math.sqrt(D)) / (2 * a)
-#         roots.append(x2)
-#     return roots
-#
-#
-# a, b, c = 1, -2, 8
-# print(find_roots(a, b, c))
+def coren(a, b, c):
+    if discr(a, b, c) < 0:
+        print('Корней нет')
+    elif discr(a, b, c) == 0:
+        return -b / 2 * a
+    else:
+        return [(-b - sqrt(discr(a, b, c))) / 2 * a, (-b + sqrt(discr(a, b, c))) / 2 * a]
 
-# from utils import discr
-#
-# def find_roots(a, b, c):
-#     D = discr(a, b, c)
-#     roots = []
-#     x1 = (-b + D ** 0.2) / (2 * a)
-#     roots.append(x1)
-#     x2 = (-b - D ** 0.5) / (2 * a)
-#     roots.append(x2)
-#     return set(roots)
-#
-# a, b, c = 4, 4, 15
-# print(find_roots(a, b, c))
+print(coren(-4, 2, 1))
+
+
+import math
+
+def find_roots(a, b, c):
+    D = b ^ 2 - 4 * a * c
+    roots = []
+    if D < 0:
+        roots.append('Нет корней')
+        return roots
+    x1 = (-b + math.sqrt(D)) / (2 * a)
+    roots.append(x1)
+    if D > 0:
+        x2 = (-b - math.sqrt(D)) / (2 * a)
+        roots.append(x2)
+    return roots
+
+
+a, b, c = 1, -2, 8
+print(find_roots(a, b, c))
+
+from utils import discr
+
+def find_roots(a, b, c):
+    D = discr(a, b, c)
+    roots = []
+    x1 = (-b + D ** 0.2) / (2 * a)
+    roots.append(x1)
+    x2 = (-b - D ** 0.5) / (2 * a)
+    roots.append(x2)
+    return set(roots)
+
+a, b, c = 4, 4, 15
+print(find_roots(a, b, c))
 
 
 '''
@@ -91,39 +91,39 @@
 '''
 
 
-# def calculate_lcm(x, y):
-#     if x > y:
-#         greater = x
-#     else:
-#         greater = y
-#     while True:
-#         if (greater % x == 0) and (greater % y == 0):
-#             lcm = greater
-#             break
-#         greater += 1
-#     return lcm
+def calculate_lcm(x, y):
+    if x > y:
+        greater = x
+    else:
+        greater = y
+    while True:
+        if (greater % x == 0) and (greater % y == 0):
+            lcm = greater
+            break
+        greater += 1
+    return lcm
 
+#
+num1 = int(input("Введите первое число: "))
+num2 = int(input("Введите второе число: "))
 # #
-# num1 = int(input("Введите первое число: "))
-# num2 = int(input("Введите второе число: "))
-# # #
-# print(f'НОК чисел {num1} и {num2} равен {calculate_lcm(num1, num2)}')
+print(f'НОК чисел {num1} и {num2} равен {calculate_lcm(num1, num2)}')
 #
-# from math import lcm, gcd
-#
-# def get_lcm(a, b):
-#     return lcm(a, b)
-#
-#
-# print(f'НОК чисел {num1} и {num2} равен {get_lcm(num1, num2)}')
-#
-# print(f'НОД чисел {num1} и {num2} равен {gcd(num1, num2)}')
+from math import lcm, gcd # lcm наименьшее общее кратное, gcm наименьший общий делитель
+
+def get_lcm(a, b):
+    return lcm(a, b)
 
 
-# import math
+print(f'НОК чисел {num1} и {num2} равен {get_lcm(num1, num2)}')
 
-#
-# help(math)
+print(f'НОД чисел {num1} и {num2} равен {gcd(num1, num2)}')
+
+
+import math
+
+
+help(math)
 
 
 # A = 1
