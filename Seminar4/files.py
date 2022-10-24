@@ -122,7 +122,7 @@ my_list = ['first string', 'second string', 'third string', 'fourth string', 'fi
 
 # with open('test2.txt', 'w') as my_file:
 #     # my_file.writelines(my_list)
-#     print(my_list, sep='\n', file=my_file) все передаст в файл
+#     print(my_list, sep='\n', file=my_file) #все передаст в файл
 
 # with open('test2.txt', 'w') as my_file:
 #     for line in my_list:
