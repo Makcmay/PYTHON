@@ -48,10 +48,10 @@ def calc(op, a, b):
 calc(lambda x, y: x+y, 4, 5)
 
 
-List Comprehension
-[exp for item in iterable]
-[exp for item in iterable (if conditional)]
-[exp <if conditional> for item in iterable (if conditional)]
+# List Comprehension
+# [exp for item in iterable]
+# [exp for item in iterable (if conditional)]
+# [exp <if conditional> for item in iterable (if conditional)]
 
 list=[]
 
@@ -112,7 +112,7 @@ print(data)
 
 data = list(map(int, '1 2 3 5'.split())) #распарсили строку на числа
 
-for e in data: оборачивание в лист позволяет работать с сохранеными данными
+for e in data: #оборачивание в лист позволяет работать с сохранеными данными
     print(e)
 
 print('--')
@@ -137,7 +137,7 @@ data = [x for x in range(10)]
 res = list(filter(lambda x: not x % 2, data))  # not x%2 = x%2 ==0
 print(res)
 
-используем filter вместо where
+#используем filter вместо where
 
 data = '1 2 3 5 8 15 23 38'.split()
 
