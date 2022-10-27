@@ -33,7 +33,7 @@ def enemyTurn():
     player_field = model.getPlayerField()
     move = bot.AIMove(field, player_field, enemy_field, model.win)
     field[move] = mark
-    model.setPlayerMove(move)
+    model.setEnemyMove(move)
     printField()
     enemy_field = model.getEnemyField()  # print(model.player_field) проверка записи 1 в нужную позицию
     if model.winCondition(enemy_field):
