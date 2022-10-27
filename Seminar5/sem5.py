@@ -1,10 +1,10 @@
 # 35. Есть N натуральных чисел, записанных через пробел. Среди чисел не хватает одного, чтобы выполнялось условие A[i] - 1 == A[i-1]. Найдите это число.
 # 	my_str = ‘1 2 3 5 6’ => 4
 
-# my_str = list(map(int, '1 2 3 5 6'.split()))
-# print(my_str)
-# # num = [my_str[x]+1 for x in range(len(my_str) -1) if my_str[x+1] - my_str[x] > 1]
-# print([my_str[x]+1 for x in range(len(my_str) -1) if my_str[x+1] - my_str[x] > 1])
+my_str = list(map(int, '1 2 3 5 6'.split()))
+print(my_str)
+# num = [my_str[x]+1 for x in range(len(my_str) -1) if my_str[x+1] - my_str[x] > 1]
+print([my_str[x]+1 for x in range(len(my_str) -1) if my_str[x+1] - my_str[x] > 1])
 
 # 36. Дан список чисел. Создайте список, в который попадают числа, описываемые возрастающую последовательность. Порядок элементов менять нельзя.
 # Пример:
