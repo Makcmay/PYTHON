@@ -4,11 +4,13 @@
 
 game_field = ['1','2','3','4','5','6','7','8','9'] # френдли инрефейс, потому у игрока [move -1]
 
-player_field = [' ',' ',' ',' ',' ',' ',' ',' ',' ',]
-enemy_field = [' ',' ',' ',' ',' ',' ',' ',' ',' ',]
+player_field = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+enemy_field = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 mark = 'X'
 win = [(0,1,2),(3,4,5),(6,7,8),(0,3,6),
         (1,4,7),(2,5,8),(0,4,8),(2,4,6),] # условия выигрыша, по клеткам
+
+name = ''
 
 def changeMark():
     global mark # обращение к переменной вне функции
@@ -16,6 +18,16 @@ def changeMark():
         mark = 'X'
     else:
         mark = 'O'    
+
+def getName() -> str: 
+    global name
+    return name
+
+def setName(new_name: str):
+    global name
+    name = new_name
+
+
 
 def getMark() -> str: 
     global mark
