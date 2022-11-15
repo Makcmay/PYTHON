@@ -14,7 +14,7 @@ def new_create(data, device = 1):
         .format(p)
     xml += '<xml>'
 
-    with open('new_data.xml', 'w') as page:
+    with open('Lec/LEC4/JOIN_JOB/new_data.xml', 'w') as page:
         page.write(xml)
 
     return data

@@ -14,7 +14,7 @@ def new_create(data, device = 1):
         .format(style, p)
     html += '   <body>\n</html>'
 
-    with open('new_index.html', 'w') as page:
+    with open('Lec/LEC4/JOIN_JOB/new_index.html', 'w') as page:
         page.write(html)
 
     return data
