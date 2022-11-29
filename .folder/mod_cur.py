@@ -9,7 +9,7 @@ def getCurrency(cur):
 
 def getWeather(s_city):
     city_id = 0
-    appid = '5316e5b35b9025d318bdda146d6e0dda'
+    appid = 'TOKEN_WR'
     res = requests.get("http://api.openweathermap.org/data/2.5/weather",
                  params={'q': s_city, 'type': 'like', 'units': 'metric', 'APPID': appid})
     data = res.json()
