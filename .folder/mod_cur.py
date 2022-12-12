@@ -19,7 +19,6 @@ def getWeather(s_city):
     res = requests.get("http://api.openweathermap.org/data/2.5/weather",
                  params={'q': s_city, 'type': 'like', 'units': 'metric', 'APPID': appid})
     data = res.json()
-    print(data)
     city= data["name"]
     cur_weather = data['main']['temp']
     descript_weather =  data['weather'][0]['description']
@@ -38,10 +37,45 @@ def getWeather(s_city):
 def getHoroscope(zodiac):
     response = requests.get('http://img.ignio.com/r/export/utf/xml/daily/com.xml')
     dict_data = xmltodict.parse(response.content)
-    value = dict_data['horo'][zodiac]["today"][8:]
-    value2 = dict_data['horo'][zodiac]["tomorrow"][8:]
-    return (f'Гороскоп для {zodiac} на сегодня: {value}\n'
-            f'Гороскоп для {zodiac} на завтра: {value2}')
+    value = dict_data['horo'][zodiac]["today"]#[8:]
+    #value2 = dict_data['horo'][zodiac]["tomorrow"]#[8:]
+    return (f'Гороскоп для {str.title(zodiac)} на сегодня: {value}\n')
+           #f'Гороскоп для {str.title(zodiac)} на завтра: {value2}')
+
+def get_act(data):
+    if data == 'moscow':
+        return getWeather(data)
+    elif data == 'USD':
+        return getCurrency(data)
+    elif data == 'EUR':
+        return getCurrency(data)
+    else:
+        return getHoroscope(data)    
+
+# eng_rus_dict = {
+#     'one': 'один',
+#     'two': 'два',
+#     'three': 'три',
+#     'four': 'четыре',
+#     'five': 'пять',
+#     'six': 'шесть',
+#     'seven': 'семь',
+#     'eight': 'восемь',
+#     'nine': 'девять',
+#     'ten': 'десять'
+# }
+
+
+# def num_translate_adv(eng_word):
+#     if eng_word[0].isupper():
+#         eng_word = eng_word.lower()
+#         return eng_rus_dict[eng_word].capitalize()
+#     else:
+#         return eng_rus_dict[eng_word]
+
+
+# print(num_translate_adv('seven'))
+# print(num_translate_adv('Seven'))
 
 
 # value = ''
@@ -106,3 +140,5 @@ def getHoroscope(zodiac):
 #                 bot.edit_message_text(chat_id=query.message.chat.id,
 #                                     message_id=query.message.id, text=value, reply_markup=keyboard)
 #             old_value = value
+
+
