@@ -1,5 +1,5 @@
 import telebot
-from telebot import types
+# from telebot import tepes
 import mod_cur as mc
 # from transliterate import translit, get_available_language_codes
 # from textblob import TextBlob 
